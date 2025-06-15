@@ -2,47 +2,48 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import { icons } from "lucide-react";
 
 const projects = [
   {
-    title: "Olova! A Lightweight JavaScript Library",
+    title: "Shooter",
     description:
-      "A lightweight JavaScript library for creating beautiful, responsive UI components.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
-    color: "#5196fd",
-    githubLink: "https://github.com/olovajs/olova",
-    liveLink: "https://olova.js.org/",
+      "Exercice de création d'un jeu en python avec pygame issu des vidéos de Graven - Développement",
+    src: "src/assets/images/shooter.jpg",
+    link: "",
+    color: "#881e18",
+    githubLink: "https://github.com/Rajirahoui/SHOOTER",
+    liveLink: "",
   },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS ",
+    title: "Bonsai Coach Academie",
     description:
-      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
-    src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
-    color: "#8f89ff",
-    githubLink: "https://github.com/seraprogrammer/portfolio",
-    liveLink: "https://codervai.vercel.app",
+      "Dans le cadre d’un cours de maintenance, nous avons repris un projet existant pour y apporter des modifications : liaison front/back entre deux projets, ajout du multi-upload, listing des fichiers utilisateurs et gestion des accès par module.",
+    src: "src/assets/images/bonsai.jpeg",
+    link: "",
+    color: "#937b3b",
+    githubLink: "https://github.com/tvinchent/BCA",
+    liveLink: "",
   },
   {
-    title: "🚀 CodeWhisperer",
+    title: " 💻✨ Infrastructure Web ",
     description:
-      "🚀 CodeWhisperer A powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
+      " nous devions donc enssemble créer : Une architecture web en 3 tiers (ReverseProxy, Web et SGBDR), un système d’authentification puis l'automatiser avec un script, des seveurs proteger contre les brute force, les tentatives de fuzzing et alerter lors des modification des fichies de configuration.",
+    src: "src/assets/images/infra.png",
+    link: "",
     color: "#fff",
-    githubLink: "https://github.com/seraprogrammer/codewhisperer",
+    githubLink: "https://github.com/tvinchent/BCA",
     liveLink: "https://codewhisperer.vercel.app/",
   },
   {
-    title: "CodeKori 🔥",
+    title: "portfolio ",
     description:
-      "CodeKori is a powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "house.jpg",
-    link: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
-    color: "#ed649e",
-    githubLink: "https://github.com/seraprogrammer/CodeKori",
-    liveLink: "https://codekori.js.org",
+      "Ce portfolio est mon tout premier projet personnel développé avec React.js. L’objectif était de me familiariser avec les bases de la bibliothèque React, tout en créant un site moderne, responsive et fonctionnel pour présenter mes compétences, mes projets et mon parcours.",
+    src: "src/assets/images/portfolio.png",
+    link: "",
+    color: "#fff",
+    githubLink: "https://github.com/Rajirahoui/Raji-Rahoui-Portfolio",
+    liveLink: "https://portfolio-raji-1.netlify.app",
   },
 ];
 
@@ -100,14 +101,14 @@ export default function Projects() {
   return (
     <ReactLenis root>
       <main className="bg-black" ref={container}>
-        <section className="text-white w-full bg-slate-950">
+        <section className="text-white w-full bg-[#04081a]">
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (
               <Card
                 key={`p_${i}`}
                 i={i}
-                url={project.link}
+                url={project.src}
                 title={project.title}
                 color={project.color}
                 description={project.description}

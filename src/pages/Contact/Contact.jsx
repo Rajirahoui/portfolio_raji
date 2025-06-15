@@ -17,25 +17,25 @@ export default function Contact() {
     let isValid = true;
 
     if (!formData.name.trim()) {
-      tempErrors.name = "Name is required";
+      tempErrors.name = "Le nom est requis.";
       isValid = false;
     }
 
     if (!formData.email.trim()) {
-      tempErrors.email = "Email is required";
+      tempErrors.email = "L'email est requis.";
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      tempErrors.email = "Email is invalid";
+      tempErrors.email = "L'email est invalide.";
       isValid = false;
     }
 
     if (!formData.subject.trim()) {
-      tempErrors.subject = "Subject is required";
+      tempErrors.subject = "Le sujet est requis.";
       isValid = false;
     }
 
     if (!formData.message.trim()) {
-      tempErrors.message = "Message is required";
+      tempErrors.message = "Le message est requis.";
       isValid = false;
     }
 
@@ -47,20 +47,18 @@ export default function Contact() {
     e.preventDefault();
 
     if (!validateForm()) {
-      setStatus("Please fill in all required fields correctly.");
+      setStatus("Veuillez remplir tous les champs correctement.");
       return;
     }
 
-    // Create a new FormData object to send to Web3Forms API
     const form = new FormData();
-    form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703"); // Replace with your Web3Forms access key
+    form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703"); // à remplacer par ta vraie clé sécurisée si besoin
     form.append("name", formData.name);
     form.append("email", formData.email);
-    form.append("subject", formData.subject || "New Contact Form Submission");
+    form.append("subject", formData.subject || "Nouveau message de contact");
     form.append("message", formData.message);
 
     try {
-      // Send form data to Web3Forms API
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: form,
@@ -69,7 +67,7 @@ export default function Contact() {
       const result = await response.json();
 
       if (response.ok) {
-        setStatus("Message sent successfully!");
+        setStatus("Message envoyé avec succès !");
         setFormData({
           name: "",
           email: "",
@@ -78,30 +76,27 @@ export default function Contact() {
         });
         setErrors({});
       } else {
-        setStatus(result.message || "There was an error sending your message.");
+        setStatus(result.message || "Une erreur s'est produite.");
       }
     } catch (error) {
-      setStatus("An error occurred. Please try again.");
-      console.error("Error:", error);
+      setStatus("Une erreur s'est produite. Veuillez réessayer.");
+      console.error("Erreur :", error);
     }
   };
 
   return (
-    <main
-      className="pt-20 lg:pt-[0rem] bg-[#04081A]
- text-white min-h-screen"
-    >
+    <main className="pt-20 lg:pt-[0rem] bg-[#04081A] text-white min-h-screen">
       <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Contact Info */}
+            {/* Infos de contact */}
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  Get in Touch
+                  Me Contacter
                 </h2>
                 <p className="text-gray-300 text-lg">
-                  Have a question or want to work together? Drop us a message!
+                  Une question ? Un projet ? N'hésitez pas à m'écrire !
                 </p>
               </div>
 
@@ -112,7 +107,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-400">olovajs@gmail.com</p>
+                    <p className="text-gray-400">raji.rahoui@icloud.com</p>
                   </div>
                 </div>
 
@@ -121,21 +116,21 @@ export default function Contact() {
                     <MapPin className="w-6 h-6 text-pink-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Location</h3>
-                    <p className="text-gray-400">Laxmipure, Natore 6400</p>
+                    <h3 className="font-semibold">Localisation</h3>
+                    <p className="text-gray-400">Lille, France</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Formulaire */}
             <div className="backdrop-blur-lg bg-white/5 p-8 rounded-2xl shadow-xl">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 gap-6">
                   <div>
                     <input
                       type="text"
-                      placeholder="Your Name"
+                      placeholder="Votre nom"
                       className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
                         errors.name ? "border-red-500" : "border-gray-700"
                       } focus:border-blue-500 focus:outline-none transition-colors`}
@@ -152,7 +147,7 @@ export default function Contact() {
                   <div>
                     <input
                       type="email"
-                      placeholder="Your Email"
+                      placeholder="Votre email"
                       className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
                         errors.email ? "border-red-500" : "border-gray-700"
                       } focus:border-blue-500 focus:outline-none transition-colors`}
@@ -171,7 +166,7 @@ export default function Contact() {
                   <div>
                     <input
                       type="text"
-                      placeholder="Subject"
+                      placeholder="Sujet"
                       className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
                         errors.subject ? "border-red-500" : "border-gray-700"
                       } focus:border-blue-500 focus:outline-none transition-colors`}
@@ -189,7 +184,7 @@ export default function Contact() {
 
                   <div>
                     <textarea
-                      placeholder="Your Message"
+                      placeholder="Votre message"
                       rows="4"
                       className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
                         errors.message ? "border-red-500" : "border-gray-700"
@@ -211,16 +206,15 @@ export default function Contact() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity"
                 >
-                  <span>Send Message</span>
+                  <span>Envoyer le message</span>
                   <Send className="w-4 h-4" />
                 </button>
               </form>
 
-              {/* Status Message */}
               {status && (
                 <div
                   className={`mt-4 text-center ${
-                    status.includes("success")
+                    status.includes("succès")
                       ? "text-green-400"
                       : "text-red-400"
                   }`}
