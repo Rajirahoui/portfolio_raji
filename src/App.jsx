@@ -9,6 +9,7 @@ import Skills from "./pages/Skills/Skills";
 import Education from "./pages/Education/Education";
 
 import { Route, Routes } from "react-router-dom";
+import Footer from "./pages/Footer/Footer";
 
 export default function App() {
   const [isOnePage, setIsOnePage] = useState(false); // Toggle state
@@ -25,7 +26,9 @@ export default function App() {
           <Experience />
           <Education />
           <Contact />
+          
         </>
+        
       ) : (
         // Router Mode: Use routes for navigation
         <Routes>`
@@ -37,6 +40,8 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
         </Routes>
       )}
+      <Footer/>
     </>
+    
   );
 }

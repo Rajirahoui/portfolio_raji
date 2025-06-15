@@ -14,27 +14,43 @@ const EducationSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const educationData = [
-    {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
-      mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
-      description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
-    },
-    {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
-      mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
-      description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
-    },
-  ];
+  {
+    "degree": "Bachelor Informatique",
+    "school": "École d’Ingénieur - EPSI",
+    "mascot": "💻",
+    "year": "2024-2027",
+    "achievements": [],
+    "skills": ["Développement Web", "DevOps", "Sécurité", "Gestion de projet"],
+    "description": "Formation en école d’ingénieur spécialisée en informatique, orientée vers la pratique professionnelle et les projets concrets."
+  },
+  {
+    "degree": "Licence en Mathématique - Informatique",
+    "school": "Université de Lille",
+    "mascot": "🏛️",
+    "year": "2022-2024",
+    "achievements": [],
+    "skills": ["Analyse", "Algèbre", "Programmation", "Bases de données"],
+    "description": "Formation universitaire combinant des compétences théoriques en mathématiques et des bases solides en informatique."
+  },
+  {
+  "degree": "Formation en ligne - Création de sites Web & Référencement",
+  "school": "Autodidacte / Plateformes en ligne",
+  "mascot": "🌐",
+  "year": "2020-2021",
+  "achievements": [],
+  "skills": ["WordPress", "Gestion de projets", "SEO", "SEA", "Marketing digital"],
+  "description": "Formation en ligne axée sur la création de sites web avec WordPress, la gestion de projets web, et les techniques de référencement naturel (SEO) et (SEA)."
+  },
+  {
+    "degree": "Baccalauréat Général",
+    "school": "Lycée Paul Hazard",
+    "mascot": "🎓",
+    "year": "2017-2020",
+    "achievements": [],
+    "skills": ["Mathématiques", "Science Politique", "Sciences Économiques et Sociales"],
+    "description": "Obtention du baccalauréat général à Armentières, avec un enseignement axé sur les disciplines générales."
+  },
+];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,11 +91,10 @@ const EducationSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
-            Educational Journey
+            Formations
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover how academic excellence shapes innovative thinking and
-            professional growth.
+            "Le savoir est le commencement de l’action."
           </p>
         </motion.div>
 
@@ -87,7 +102,7 @@ const EducationSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-1 gap-8"
         >
           {educationData.map((edu, index) => (
             <motion.div
