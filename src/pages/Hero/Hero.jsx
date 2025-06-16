@@ -145,6 +145,7 @@ const profile = {
 
           {/* Choose one of these background options */}
           <GridBackground />
+          
 
           {/* Or keep the original backgrounds if you prefer */}
           {/* <HexagonBackground /> */}
