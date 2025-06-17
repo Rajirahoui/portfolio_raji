@@ -5,13 +5,16 @@ import PropTypes from "prop-types";
 import { icons } from "lucide-react";
 import bonsai from "@/assets/images/bonsai.jpeg";
 import shooter from "@/assets/images/shooter.jpg";
+import infra from "@/assets/images/infra.png";
+import portfolio from "@/assets/images/portfolio.png";
+
 
 const projects = [
   {
     title: "Shooter",
     description:
       "Exercice de création d'un jeu en python avec pygame issu des vidéos de Graven - Développement",
-    src: {shooter},
+    src: shooter,
     link: "",
     color: "#881e18",
     githubLink: "https://github.com/Rajirahoui/SHOOTER",
@@ -21,7 +24,7 @@ const projects = [
     title: "Bonsai Coach Academie",
     description:
       "Dans le cadre d’un cours de maintenance, nous avons repris un projet existant pour y apporter des modifications : liaison front/back entre deux projets, ajout du multi-upload, listing des fichiers utilisateurs et gestion des accès par module.",
-    src: "src/assets/images/bonsai.jpeg",
+    src: bonsai,
     link: "",
     color: "#937b3b",
     githubLink: "https://github.com/tvinchent/BCA",
@@ -31,7 +34,7 @@ const projects = [
     title: " 💻✨ Infrastructure Web ",
     description:
       " nous devions donc enssemble créer : Une architecture web en 3 tiers (ReverseProxy, Web et SGBDR), un système d’authentification puis l'automatiser avec un script, des seveurs proteger contre les brute force, les tentatives de fuzzing et alerter lors des modification des fichies de configuration.",
-    src: "src/assets/images/infra.png",
+    src: infra,
     link: "",
     color: "#fff",
     githubLink: "https://github.com/tvinchent/BCA",
@@ -41,7 +44,7 @@ const projects = [
     title: "portfolio ",
     description:
       "Ce portfolio est mon tout premier projet personnel développé avec React.js. L’objectif était de me familiariser avec les bases de la bibliothèque React, tout en créant un site moderne, responsive et fonctionnel pour présenter mes compétences, mes projets et mon parcours.",
-    src: "src/assets/images/portfolio.png",
+    src: portfolio,
     link: "",
     color: "#fff",
     githubLink: "https://github.com/Rajirahoui/Raji-Rahoui-Portfolio",
