@@ -3,13 +3,15 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { icons } from "lucide-react";
+import bonsai from "@/assets/images/bonsai.jpeg";
+import shooter from "@/assets/images/shooter.jpg";
 
 const projects = [
   {
     title: "Shooter",
     description:
       "Exercice de création d'un jeu en python avec pygame issu des vidéos de Graven - Développement",
-    src: "src/assets/images/shooter.jpg",
+    src: {shooter},
     link: "",
     color: "#881e18",
     githubLink: "https://github.com/Rajirahoui/SHOOTER",
