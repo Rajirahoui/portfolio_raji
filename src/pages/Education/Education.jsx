@@ -39,7 +39,7 @@ const EducationSection = () => {
   "year": "2020-2021",
   "achievements": [],
   "skills": ["WordPress", "Gestion de projets", "SEO", "SEA", "Marketing digital"],
-  "description": "Formation en ligne axée sur la création de sites web avec WordPress, la gestion de projets web, et les techniques de référencement naturel (SEO) et (SEA)."
+  "description": "Formation en ligne axée sur la création de sites web, la gestion de projets web, et les techniques de référencement naturel (SEO) et (SEA)."
   },
   {
     "degree": "Baccalauréat Général",
