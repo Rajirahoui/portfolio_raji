@@ -43,11 +43,10 @@ const GridBackground = () => {
 
 export default function Hero() {
   const words = [
-    "Full-Stack Developer & UI/UX Enthusiast",
-    "JavaScript Developer & Creator",
-    "Learning MARN Stack",
-    "Linux & GitHub for DevOps Enthusiast",
-  ];
+  "Développeur Full-Stack passionné par l’impact social",
+  "Créatif du code, artisan du front",
+  "Je fais danser React, Tailwind et l’UX",
+];
 
   const [code] = useState(`
 const profile = {
@@ -235,7 +234,7 @@ const profile = {
 
                 {/* Contact Button */}
                 <a
-                  href="#"
+                  href="public/Cv alternance.pdf"
                   
                   className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
